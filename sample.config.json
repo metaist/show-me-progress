@@ -1,0 +1,13 @@
+{
+  "google": {
+    "analytics": "UA-XXXXXXXX-X"
+  },
+
+  "mailchimp": {
+    "api": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-xxx",
+    "nonce": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "list": "xxxxxxxxxx",
+    "group": "xxxxx",
+    "subgroup": ["Sample"]
+  }
+}

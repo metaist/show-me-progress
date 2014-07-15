@@ -74,14 +74,17 @@ ga('send', 'pageview');
         </div>
 
         <aside class="col-sm-5">
-          <form class="form" method="post" novalidate
-                action="//metaist.us8.list-manage.com/subscribe/post?u=34315382b9ad1740cc0a00825&amp;id=4287e9f5ef">
+          <form id="signup" class="form" method="post" novalidate
+                action="//metaist.us8.list-manage.com/subscribe/post?u=34315382b9ad1740cc0a00825&amp;id=4287e9f5ef"
+                data-ajax="./app/subscribe.php">
 
             <p class="lead text-center">
               Sign up below for a FREE daily email.
             </p>
 
-            <input type="hidden" value="1" name="group[11021][1]" id="mce-group[11021]-11021-0" /><!-- Show Me Progress -->
+            <input type="hidden" name="group[11021][1]" value="1" id="mce-group[11021]-11021-0" /><!-- Show Me Progress -->
+            <input type="hidden" name="update_existing" value="1" />
+            <input type="hidden" name="replace_interests" value="0" />
             <div class="no-robots" style="position: absolute; left: -5000px;">
               <input type="text" name="b_34315382b9ad1740cc0a00825_4287e9f5ef" tabindex="-1" value="" />
             </div>
@@ -99,19 +102,21 @@ ga('send', 'pageview');
             <div class="form-group">
               <label for="EMAIL" class="control-label">Email</label>
               <input type="email" class="form-control" id="EMAIL" name="EMAIL" placeholder="Email" />
-              <span class="help-block">
-                We'll only use your email to contact you about this service.
-              </span>
+              <span class="help-block">no spam, unsubscribe anytime</span>
             </div>
 
             <div class="form-group">
-              <input type="submit" value="Subscribe" name="subscribe" class="btn btn-lg btn-primary" />
+              <input type="submit" value="Subscribe" name="subscribe"
+                     class="btn btn-lg btn-primary"
+                     data-loading-text="Sending..." />
             </div>
+
+            <div id="result"></div>
           </form>
         </aside>
       </div>
 
-      <footer>All content under Creative Commons BY-3.0. Site by Metaist.</footer>
+      <footer>All content under MIT License. Site by Metaist.</footer>
     </div>
   </div>
 </div>
