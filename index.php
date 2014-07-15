@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+  $CONFIG = json_decode(file_get_contents('config.json'), true);
+  $MC = $CONFIG['mailchimp'];
+?><!DOCTYPE html>
 <html lang="en-US"  class="no-js"><head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,7 +17,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-11511623-2', 'auto');
+ga('create', '<?php echo $CONFIG['google']['analytics'];?>', 'auto');
 ga('send', 'pageview');
 </script>
 </head><body>
@@ -75,18 +78,18 @@ ga('send', 'pageview');
 
         <aside class="col-sm-5">
           <form id="signup" class="form" method="post" novalidate
-                action="//metaist.us8.list-manage.com/subscribe/post?u=34315382b9ad1740cc0a00825&amp;id=4287e9f5ef"
+                action="//metaist.us8.list-manage.com/subscribe/post?u=34315382b9ad1740cc0a00825&amp;id=<?php echo $MC['list']; ?>"
                 data-ajax="./app/subscribe.php">
 
             <p class="lead text-center">
               Sign up below for a FREE daily email.
             </p>
 
-            <input type="hidden" name="group[11021][1]" value="1" id="mce-group[11021]-11021-0" /><!-- Show Me Progress -->
+            <input type="hidden" name="group[<?php echo $MC['group']; ?>][1]" value="1" />
             <input type="hidden" name="update_existing" value="1" />
             <input type="hidden" name="replace_interests" value="0" />
             <div class="no-robots" style="position: absolute; left: -5000px;">
-              <input type="text" name="b_34315382b9ad1740cc0a00825_4287e9f5ef" tabindex="-1" value="" />
+              <input type="text" name="<?php echo $MC['nonce']; ?>" tabindex="-1" value="" />
             </div>
 
             <div class="form-group">
