@@ -14,8 +14,8 @@
   <entry>
     <title>Show Me Progress: <?php echo $dt?></title>
     <link href="//metaist.com/show-me-progress" />
-    <link rel="alternate" type="text/html" href="//metaist.com/show-me/progress"/>
-    <id>tag:metaist.com,2014:show-me.progress-<?php echo sha1($dt); ?></id>
+    <link rel="alternate" type="text/html" href="//metaist.com/show-me-progress"/>
+    <id>tag:metaist.com,2014:show-me-progress-<?php echo sha1($dt); ?></id>
     <published><?php echo $dt?>T00:00:00+00:00</published>
     <updated><?php echo $dt?>T00:00:00+00:00</updated>
     <author>
