@@ -8,11 +8,12 @@
   $XFP = $_SERVER['HTTP_X_FORWARDED_PROTO'] || '';
   if('on' == $H || 1 == $H || 'https' == $XFP) { $protocol = 'https'; }
   
-  $BASE_URL = $protocol . '://metaist.com/show-me-progress';
+  $BASE_HOST = $protocol . '://metaist.com';
+  $BASE_URL = $BASE_HOST . '/show-me-progress';
 ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Metaist</title>
-  <link rel="self" href="<?php echo $BASE_URL;?>/feed" />
+  <link rel="self" href="<?php echo $BASE_HOST . $_SERVER['REQUEST_URI'];?>" />
   <updated><?php echo $dt?>T00:00:00+00:00</updated>
   <author>
     <name>The Metaist</name>
