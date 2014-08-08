@@ -2,10 +2,17 @@
   header("Content-type: text/xml");
   echo '<?xml version="1.0" encoding="utf-8" ?>' . "\n";
   $dt = date('Y-m-d');
+  
+  $protocol = 'http';
+  $H = $_SERVER['HTTPS'] || '';
+  $XFP = $_SERVER['HTTP_X_FORWARDED_PROTO'] || '';
+  if('on' == $H || 1 == $H || 'https' == $XFP) { $protocol = 'https'; }
+  
+  $BASE_URL = $protocol . '://metaist.com/show-me-progress';
 ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Metaist</title>
-  <link rel="self" href="//metaist.com/show-me-progress/feed" />
+  <link rel="self" href="<?php echo $BASE_URL;?>/feed" />
   <updated><?php echo $dt?>T00:00:00+00:00</updated>
   <author>
     <name>The Metaist</name>
@@ -13,8 +20,8 @@
   <id>tag:metaist.com,2014:show-me.progress</id>
   <entry>
     <title>Show Me Progress: <?php echo $dt?></title>
-    <link href="//metaist.com/show-me-progress" />
-    <link rel="alternate" type="text/html" href="//metaist.com/show-me-progress"/>
+    <link href="<?php echo $BASE_URL;?>" />
+    <link rel="alternate" type="text/html" href="<?php echo $BASE_URL;?>"/>
     <id>tag:metaist.com,2014:show-me-progress-<?php echo sha1($dt); ?></id>
     <published><?php echo $dt?>T00:00:00+00:00</published>
     <updated><?php echo $dt?>T00:00:00+00:00</updated>
